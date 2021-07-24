@@ -1,0 +1,56 @@
+.gear-icon{
+    position:absolute;
+    right: 6vw;
+    bottom: 5vh;
+    cursor: pointer;
+    z-index: 1000;
+    transform: scale(2);
+    visibility: hidden;
+}
+.timer-data-form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: rgb(42, 56, 68);
+        height: 80vh;
+        width: 80vw;
+        z-index: 1000;
+        
+        padding: 3rem;
+        transition: all 350ms ease-in;
+        @include flexcenter(space-around,center,column);
+
+    input{
+        display: block;
+         width: 5rem;
+         height: 1.5rem;
+         border: none;
+         outline:none;
+         padding: 5px;
+         margin-top: .5rem;
+         // to remove the number arrow
+         &::-webkit-outer-spin-button,
+&::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          }
+          &[type="submit"]{
+              cursor: pointer;
+          }
+       }
+    }
+   .close{
+       cursor: pointer;
+       position: absolute;
+       top:5%;
+       right: 5%;
+       color: rgb(211, 83, 158);
+       transform: scale(2);
+   } 
+ .fade{
+    // opacity: 0;
+    visibility: hidden;
+    // display: none;
+    transform: scale(.01);
+
+}

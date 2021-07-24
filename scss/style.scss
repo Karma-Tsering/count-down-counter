@@ -1,0 +1,160 @@
+@import 'variable';
+@import './reset';
+@import 'mixin';
+@import './animi';
+@import './input';
+
+body{
+    // shorthand background:color img-link bg-position/size(width height) repeat attachment
+    
+    background: url(../images/bg-stars.svg) top/100% 80%  no-repeat, url(../images/pattern-hills.svg) bottom/100% 20% no-repeat, linear-gradient(to bottom, #1e1e28, #251d2c);
+    height: 100vh;
+    color: $White;
+    text-align: center;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 14px;
+    @include flexcenter(space-around,center,column);
+}
+
+h2{
+    text-transform: uppercase;
+    width: 100vw;
+    letter-spacing: 2px;
+}
+
+.timer{
+@include flexcenter(center,center,row);
+width: 100vw;
+&>div{
+    margin-left: 20px;
+    .timebox{
+        position: relative;
+        height: 7rem;
+        width: 7rem;
+        font-size: 4rem;
+        background:$Dark-desaturated-blue;
+        color: $Soft-red;
+        transition: all 1s ease;
+        border-radius: 5px;
+        box-shadow: 0 .6rem 0 $almost-black;
+        perspective: 500px;
+        transform-style: preserve-3d;
+        
+        .upper{
+            position: relative;
+            height: 50%;
+            width: 100%;
+            background: $Dark-desaturated-blue;
+            border-radius: 5px 5px 0 0;
+            transition: transform 1s ease;
+            transform-origin: bottom;
+                span{
+                position:absolute;
+                bottom: 0;
+                left:50%;
+                transform:translate(-50%,-50%);
+                backface-visibility: hidden;
+        }
+        // small black dot on hing
+            &::after{
+                 position:absolute;
+                content:'';
+                bottom:0;
+                right:0;
+                height:.5rem;
+                width:.5rem;
+                border-radius:100% 0 0  0;
+                background:#000;
+            }
+        // small black dot on hing
+            &::before{
+                position:absolute;
+                bottom:0;
+                left:0;
+                content:'';
+                height:.5rem;
+                width:.5rem;
+                border-radius:0 100% 0 0;
+                background:#000;
+           }
+           
+        }
+        
+        span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        .lower{
+            position: relative;
+            height: 50%;
+            width: 100%;
+            border-radius: 0 0 5px 5px;
+            transform-origin: top;
+
+                span{
+                position:absolute;
+                top:0;
+                left:50%;
+                transform:translate(-50%,-50%);
+                transition: all 1s ease;
+                backface-visibility: hidden;
+              }
+               &::after{
+                 position:absolute;
+                content:'';
+                top:0;
+                right:0;
+                height:.5rem;
+                width:.5rem;
+                border-radius: 0 0 0 100% ;
+                background:#000;
+            }
+            &::before{
+                position:absolute;
+                top:0;
+                left:0;
+                content:'';
+                height:.5rem;
+                width:.5rem;
+                border-radius:0  0 100% 0 ;
+                background:#000;
+           }
+           }
+           .upper-fixed{
+               @extend .upper;
+               position:absolute;
+           }
+           .lower-fixed{
+               @extend .lower;
+               position: absolute;
+               background-color: $Dark-desaturated-blue;
+           }
+          
+        } 
+    }
+    .timetext{
+        margin-top: 1rem;
+        color: $Grayish-blue;
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+}
+
+.social-media{
+    @include flexcenter(center,center,row);
+    &>div{
+        margin-right: 1.3rem;
+        color:$Grayish-blue;
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .2s ease;
+        &:hover{
+            color:$Soft-red;
+            transform: scale(1.3);
+        }
+    }
+}

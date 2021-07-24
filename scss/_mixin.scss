@@ -1,0 +1,12 @@
+@mixin flexcenter($vertical,$horizontal,$direction) {
+    display: flex;
+    justify-content: $vertical;
+    align-items: $horizontal;
+    flex-direction: $direction;
+}
+
+@mixin position($top,$left) {
+   position: absolute;
+   top: $top;
+   left: $left;
+}

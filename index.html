@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- style sheet link -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- social media icon link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- google font link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+
+<title>Launch countdown timer</title>
+
+</head>
+<body>
+  <!-- ----input field for timer--------->
+  <div class="gear-icon">
+    <i class="fa fa-cog"></i>
+  </div>
+
+<form class="timer-data-form" id="clockForm" name="myForm">
+<div class="close">
+  <i class="fa fa-times" aria-hidden="true"></i>
+</div>
+  <div class="input-form">
+    <label for="dayInput">Days</label><br>
+    <input type="number" name="" id="dayInput" min="0" max="99" required>
+  </div>
+
+  <div class="input-form">
+    <label for="hourInput">Hours</label><br>
+    <input type="number" name="" id="hourInput" min="0" max="24" required>
+  </div>
+
+  <div class="input-form">
+    <label for="minInput">Mintues</label><br>
+    <input type="number" name="" id="minInput" min="0" max="59" required>
+  </div>
+
+  <div class="input-form">
+    <label for="secInput">Seconds</label><br>
+    <input type="number" name="" id="secInput" min="0" max="59" required>
+  </div>
+  <div class="input-form">
+    <input type="submit" name="" id="submit" value="start">
+  </div>
+</form>
+
+  <h2> We're launching soon </h2>
+
+<div class="timer">
+  
+  <div class="timercontent">
+  
+    <div class=" timebox day-time">
+      <div class="upper-fixed">
+        <span>00</span>
+      </div>
+      <div class="upper">
+         <span>00</span> 
+      </div>
+      <div class="lower-fixed">
+         <!-- <span>00</span>  -->
+      </div>
+      <div class="lower">
+        <span>00</span>
+      </div>
+    </div>
+
+    <div class="timetext">days</div>
+  </div>
+
+  <div class="timercontent">
+
+    <div class=" timebox hour-time">
+      <div class="upper-fixed">
+        <span>00</span>
+      </div>
+      <div class="upper">
+        <span>00</span>
+      </div>
+      <div class="lower-fixed">
+        <!-- <span>00</span> -->
+      </div>
+      <div class="lower">
+        <span>00</span>
+      </div>
+    </div>
+
+    <div class="timetext">hours</div>
+  </div>
+
+  <div class="timercontent">
+    <div class="timebox min-time">
+      
+      <div class="upper-fixed">
+        <span>00</span>
+      </div>
+      <div class="upper">
+        <span>00</span>
+      </div>
+      <div class="lower-fixed">
+        <!-- <span>00</span> -->
+      </div>
+      <div class="lower">
+        <span>00</span>
+      </div>
+
+    </div>
+    <div class="timetext">minutes</div>
+  </div>
+  <div class="timercontent">
+    <div class="timebox sec-time">
+      
+      <div class="upper-fixed">
+        <span>00</span>
+      </div>
+      <div class="upper">
+        <span>00</span>
+      </div>
+      <div class="lower-fixed">
+        <!-- <span>00</span> -->
+      </div>
+      <div class="lower">
+        <span>00</span>
+      </div>
+
+    </div>
+    <div class="timetext">Seconds</div>
+  </div>
+</div>
+
+  <!-- -----------social media linkd ----------- -->
+<div class="social-media">
+  <div class="facebook">
+    <i class="fa fa-facebook"></i>
+  </div>
+  <div class="pinterest">
+    <i class="fa fa-pinterest"></i>
+  </div>
+  <div class="instagram">
+    <i class="fa fa-instagram"></i>
+  </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
