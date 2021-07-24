@@ -371,4 +371,12 @@ h2 {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
 }
+
+.social-media > div a {
+  color: #8486a9;
+}
+
+.social-media > div a:hover {
+  color: #fb6087;
+}
 /*# sourceMappingURL=style.css.map */

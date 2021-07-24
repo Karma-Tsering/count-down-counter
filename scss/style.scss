@@ -155,6 +155,11 @@ width: 100vw;
         &:hover{
             color:$Soft-red;
             transform: scale(1.3);
+        } a{
+            color: $Grayish-blue;
+            &:hover{
+                color: $Soft-red;
+            }
         }
     }
 }
