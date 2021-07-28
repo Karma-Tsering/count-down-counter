@@ -6,7 +6,29 @@
 }
 
 @mixin position($top,$left) {
-   position: absolute;
-   top: $top;
-   left: $left;
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+    $phone:600px;
+    $tablet:760px;
+    $laptop:1200px;
+    $desktop:1200px;
+// @function translate-media-condition($c) {
+//   $condMap: (
+//     ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
+//     "<maxWidth": "(max-width: #{$mediaMaxWidth})", 		
+//     ">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
+//     "<bp1Width": "(max-width: #{$mediaBp1Width})",
+//     ">minWidth": "(min-width: #{$mediaMinWidth + 1})",
+//     "<minWidth": "(max-width: #{$mediaMinWidth})"
+//   );
+//   @return map-get( $condMap, $c );
+// }
+
+@mixin responsive($breakpoint) {
+    @media screen and (max-width:$breakpoint) {
+        @content
+    }
 }

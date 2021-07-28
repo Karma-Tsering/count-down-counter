@@ -9,6 +9,8 @@ body{
     
     background: url(../images/bg-stars.svg) top/100% 80%  no-repeat, url(../images/pattern-hills.svg) bottom/100% 20% no-repeat, linear-gradient(to bottom, #1e1e28, #251d2c);
     height: 100vh;
+    min-height: 200px;
+    min-width: 279px;
     color: $White;
     text-align: center;
     font-family: 'Red Hat Text', sans-serif;
@@ -27,6 +29,9 @@ h2{
 width: 100vw;
 &>div{
     margin-left: 20px;
+    @include responsive($phone){
+        margin-left: 8px;
+    }
     .timebox{
         position: relative;
         height: 7rem;
@@ -39,6 +44,12 @@ width: 100vw;
         box-shadow: 0 .6rem 0 $almost-black;
         perspective: 500px;
         transform-style: preserve-3d;
+        @include responsive($phone){
+            height: 4rem;
+            width: 4rem;
+            font-size: 2rem;
+            box-shadow: 0 .3rem 0 $almost-black;
+        }
         
         .upper{
             position: relative;
@@ -50,14 +61,17 @@ width: 100vw;
             transform-origin: bottom;
                 span{
                 position:absolute;
-                bottom: 0;
+                bottom:0;
                 left:50%;
                 transform:translate(-50%,-50%);
                 backface-visibility: hidden;
+                @include responsive($phone){
+                    bottom: 5.5px;
+                }
         }
         // small black dot on hing
             &::after{
-                 position:absolute;
+                position:absolute;
                 content:'';
                 bottom:0;
                 right:0;
@@ -65,6 +79,10 @@ width: 100vw;
                 width:.5rem;
                 border-radius:100% 0 0  0;
                 background:#000;
+                @include responsive($phone){
+                    height: .3rem;
+                    width: .3rem;
+                }
             }
         // small black dot on hing
             &::before{
@@ -76,6 +94,10 @@ width: 100vw;
                 width:.5rem;
                 border-radius:0 100% 0 0;
                 background:#000;
+                 @include responsive($phone){
+                    height: .3rem;
+                    width: .3rem;
+                }
            }
            
         }
@@ -92,13 +114,12 @@ width: 100vw;
             width: 100%;
             border-radius: 0 0 5px 5px;
             transform-origin: top;
-
+             
                 span{
                 position:absolute;
                 top:0;
                 left:50%;
                 transform:translate(-50%,-50%);
-                transition: all 1s ease;
                 backface-visibility: hidden;
               }
                &::after{
@@ -110,6 +131,10 @@ width: 100vw;
                 width:.5rem;
                 border-radius: 0 0 0 100% ;
                 background:#000;
+                 @include responsive($phone){
+                    height: .3rem;
+                    width: .3rem;
+                }
             }
             &::before{
                 position:absolute;
@@ -120,6 +145,10 @@ width: 100vw;
                 width:.5rem;
                 border-radius:0  0 100% 0 ;
                 background:#000;
+                 @include responsive($phone){
+                    height: .3rem;
+                    width: .3rem;
+                }
            }
            }
            .upper-fixed{
@@ -140,6 +169,9 @@ width: 100vw;
         font-size: .7rem;
         text-transform: uppercase;
         letter-spacing: 3px;
+         @include responsive($phone){
+                 font-size: .4rem;
+                }
     }
 
 }

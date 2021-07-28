@@ -16,11 +16,9 @@
         height: 80vh;
         width: 80vw;
         z-index: 1000;
-        
         padding: 3rem;
         transition: all 350ms ease-in;
         @include flexcenter(space-around,center,column);
-
     input{
         display: block;
          width: 5rem;
@@ -36,7 +34,15 @@
           }
           &[type="submit"]{
               cursor: pointer;
+              text-transform: uppercase;
+              font-weight: bold;
+              color: rgb(50, 116, 50);
           }
+       }
+       label{
+           color:$Soft-red;
+           letter-spacing: 1px;
+           font-size: 1rem;
        }
     }
    .close{
@@ -44,7 +50,7 @@
        position: absolute;
        top:5%;
        right: 5%;
-       color: rgb(211, 83, 158);
+       color:$Soft-red;
        transform: scale(2);
    } 
  .fade{

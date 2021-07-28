@@ -5,28 +5,6 @@
           box-sizing: border-box;
 }
 
-@-webkit-keyframes myAnimi {
-  0% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-  100% {
-    -webkit-transform: rotateX(-360deg);
-            transform: rotateX(-360deg);
-  }
-}
-
-@keyframes myAnimi {
-  0% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-  100% {
-    -webkit-transform: rotateX(-360deg);
-            transform: rotateX(-360deg);
-  }
-}
-
 @-webkit-keyframes top-to-bottom {
   0% {
     -webkit-transform: rotate3d(0);
@@ -141,6 +119,15 @@
 
 .timer-data-form input[type="submit"] {
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #327432;
+}
+
+.timer-data-form label {
+  color: #fb6087;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 .close {
@@ -148,7 +135,7 @@
   position: absolute;
   top: 5%;
   right: 5%;
-  color: #d3539e;
+  color: #fb6087;
   -webkit-transform: scale(2);
           transform: scale(2);
 }
@@ -163,6 +150,8 @@ body {
   background: url(../images/bg-stars.svg) top/100% 80% no-repeat, url(../images/pattern-hills.svg) bottom/100% 20% no-repeat, -webkit-gradient(linear, left top, left bottom, from(#1e1e28), to(#251d2c));
   background: url(../images/bg-stars.svg) top/100% 80% no-repeat, url(../images/pattern-hills.svg) bottom/100% 20% no-repeat, linear-gradient(to bottom, #1e1e28, #251d2c);
   height: 100vh;
+  min-height: 200px;
+  min-width: 279px;
   color: white;
   text-align: center;
   font-family: 'Red Hat Text', sans-serif;
@@ -208,6 +197,12 @@ h2 {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .timer > div {
+    margin-left: 8px;
+  }
+}
+
 .timer > div .timebox {
   position: relative;
   height: 7rem;
@@ -224,6 +219,16 @@ h2 {
           perspective: 500px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+}
+
+@media screen and (max-width: 600px) {
+  .timer > div .timebox {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    -webkit-box-shadow: 0 0.3rem 0 #191a24;
+            box-shadow: 0 0.3rem 0 #191a24;
+  }
 }
 
 .timer > div .timebox .upper, .timer > div .timebox .upper-fixed {
@@ -250,6 +255,12 @@ h2 {
           backface-visibility: hidden;
 }
 
+@media screen and (max-width: 600px) {
+  .timer > div .timebox .upper span, .timer > div .timebox .upper-fixed span {
+    bottom: 5.5px;
+  }
+}
+
 .timer > div .timebox .upper::after, .timer > div .timebox .upper-fixed::after {
   position: absolute;
   content: '';
@@ -261,6 +272,13 @@ h2 {
   background: #000;
 }
 
+@media screen and (max-width: 600px) {
+  .timer > div .timebox .upper::after, .timer > div .timebox .upper-fixed::after {
+    height: .3rem;
+    width: .3rem;
+  }
+}
+
 .timer > div .timebox .upper::before, .timer > div .timebox .upper-fixed::before {
   position: absolute;
   bottom: 0;
@@ -270,6 +288,13 @@ h2 {
   width: .5rem;
   border-radius: 0 100% 0 0;
   background: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .timer > div .timebox .upper::before, .timer > div .timebox .upper-fixed::before {
+    height: .3rem;
+    width: .3rem;
+  }
 }
 
 .timer > div .timebox span {
@@ -295,8 +320,6 @@ h2 {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
@@ -312,6 +335,13 @@ h2 {
   background: #000;
 }
 
+@media screen and (max-width: 600px) {
+  .timer > div .timebox .lower::after, .timer > div .timebox .lower-fixed::after {
+    height: .3rem;
+    width: .3rem;
+  }
+}
+
 .timer > div .timebox .lower::before, .timer > div .timebox .lower-fixed::before {
   position: absolute;
   top: 0;
@@ -321,6 +351,13 @@ h2 {
   width: .5rem;
   border-radius: 0  0 100% 0;
   background: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .timer > div .timebox .lower::before, .timer > div .timebox .lower-fixed::before {
+    height: .3rem;
+    width: .3rem;
+  }
 }
 
 .timer > div .timebox .upper-fixed {
@@ -338,6 +375,12 @@ h2 {
   font-size: .7rem;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  .timer .timetext {
+    font-size: .4rem;
+  }
 }
 
 .social-media {

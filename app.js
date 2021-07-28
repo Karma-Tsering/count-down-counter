@@ -13,10 +13,9 @@ let secInput = 1;
 
 startBtn.addEventListener("click", (e) => {
     dayInput = document.forms["myForm"]["dayInput"].value;
-    hourInput = document.forms["myForm"]["secInput"].value;
+    hourInput = document.forms["myForm"]["hourInput"].value;
     minInput = document.forms["myForm"]["minInput"].value;
     secInput = document.forms["myForm"]["secInput"].value;
-
 
     if (dayInput == "" && hourInput == "" && minInput == "" && secInput == "") {
         timerDataForm.classList.add("fade"); // exit form is all field are null
@@ -40,8 +39,11 @@ startBtn.addEventListener("click", (e) => {
     setTimer.style.visibility = "visible";
     setTimeout(() => {
         flipAllCards()
-    }, 400)
-    
+    }, 1000)
+    setTimeout(() => {
+        unFlipAllCards()
+    }, 2000)
+
     
 });
 
@@ -74,16 +76,16 @@ let seconds = 0;
 
 function updateTime() {
     if (totalMilliSec <= 0) {
-        unflip();
+        unFlipAllCards();
         return false;
     }
+    totalMilliSec -= 1000;
     // Time calculations for days, hours, minutes and seconds
      days = Math.floor(totalMilliSec / (1000 * 60 * 60 * 24));
      hours = Math.floor((totalMilliSec % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
      minutes = Math.floor((totalMilliSec % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((totalMilliSec % (1000 * 60)) / 1000);
 
-    totalMilliSec -= 1000;
 }
 
 
@@ -92,8 +94,8 @@ function flip(cardTypeClass) {
     let upper = document.querySelectorAll(cardTypeClass+ " .upper");
     let lower = document.querySelectorAll(cardTypeClass+ " .lower");
     for (index in upper) {
-        upper[index].style.animation = "top-to-bottom linear 1s infinite forwards";
-        lower[index].style.animation = "bottom-to-top linear 1s infinite forwards";
+        upper[index].style.animation = "top-to-bottom linear 1s infinite ";
+        lower[index].style.animation = "bottom-to-top linear 1s infinite ";
     }
 }
 
@@ -102,19 +104,19 @@ function flipAllCards() {
     let upper = document.querySelectorAll(" .upper");
     let lower = document.querySelectorAll(" .lower");
     for (index in upper) {
-        upper[index].style.animation = "top-to-bottom linear 1s normal forwards";
-        lower[index].style.animation = "bottom-to-top linear 1s normal forwards";
+        upper[index].style.animation = "top-to-bottom linear 1s normal ";
+        lower[index].style.animation = "bottom-to-top linear 1s normal ";
     }
 }
 // to remove the animation 
-// function unflip(cardTypeClass) {
-//     let upper = document.querySelectorAll(cardTypeClass + " .upper");
-//     let lower = document.querySelectorAll(cardTypeClass + " .lower");
-//     for (index in upper) {
-//         upper.style.animation = "";
-//         lower.style.animation = "";
-//     }
-// }
+function unFlipAllCards() {
+    let upper = document.querySelectorAll(" .upper");
+    let lower = document.querySelectorAll(" .lower");
+    for (index in upper) {
+        upper[index].style.animation = "";
+        lower[index].style.animation = "";
+    }
+}
 
 let dayTime = document.querySelectorAll(".day-time span");
 let hourTime = document.querySelectorAll(".hour-time span");
